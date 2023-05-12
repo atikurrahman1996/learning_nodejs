@@ -1,0 +1,15 @@
+{
+  "name": "externalmodule",
+  "version": "1.0.0",
+  "description": "this is npm roject for testing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atik",
+  "license": "ISC",
+  "dependencies": {
+    "movies-names": "^1.1.1",
+    "random-fruits-name": "^1.9.6"
+  }
+}
