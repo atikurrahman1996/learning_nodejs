@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
   res.send(`<h1>Student name is:${name}, id is: ${id}</>`);
 });
 */
+
 /*
 //for route parameter
 
@@ -35,9 +36,9 @@ app.get("/", (req, res) => {
 /*
 //post request with json data using postman
 
-// parse application/x-www-form-urlencoded
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
 app.use(bodyParser.json());
 
 app.post("/user", (req, res) => {
