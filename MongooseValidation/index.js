@@ -30,7 +30,7 @@ const productsSchema = new mongoose.Schema({
     required: [true, "product title is rquired"],
     minLength: [4, "minimum length of the product title 4 is rquired"],
     maxLength: [50, "maximum length of the product title  50 is rquired"],
-    trim: true, // remove space
+    trim: true, // remove white space
   },
   price: {
     type: Number,

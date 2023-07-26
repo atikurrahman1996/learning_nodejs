@@ -15,8 +15,4 @@ const cgpa = 3.72;
 
 //Short way
 
-module.exports = {
-  getName,
-  getAge,
-  cgpa,
-};
+module.exports = { getName, getAge, cgpa };

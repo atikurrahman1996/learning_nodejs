@@ -85,8 +85,7 @@ app.post("/login", async (req, res) => {
 app.get(
   "/profile",
   passport.authenticate("jwt", { session: false }),
-
-  function (req, res) {
+  (req, res) => {
     return res.status(200).send({
       success: true,
       user: {
@@ -108,9 +107,7 @@ app.use((req, res, next) => {
 //handling server error
 
 app.use((err, req, res, next) => {
-  res.status(500).json({
-    message: "something is broken",
-  });
+  res.status(500).json(err.message);
 });
 
 module.exports = app;
