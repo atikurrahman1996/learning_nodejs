@@ -56,6 +56,8 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to the server");
 });
 
+// Create
+
 app.post("/products", async (req, res) => {
   try {
     const newProduct = new productModel({
@@ -71,11 +73,13 @@ app.post("/products", async (req, res) => {
   }
 });
 
-//Find product
+// Read
+
+//Find all product
 
 app.get("/products", async (req, res) => {
   try {
-    const products = await productModel.find();
+    const products = await productModel.find(); //const products = await productModel.find().limit(2) here we can see two products
 
     if (products) {
       res.status(200).send(products);
@@ -95,9 +99,16 @@ app.get("/products/:id", async (req, res) => {
     const product = await productModel.findOne({ _id: id });
 
     if (product) {
-      res.status(200).send({ message: "product found" });
+      res.status(200).send({
+        success: true,
+        message: "Single product found",
+        data: product,
+      });
     } else {
-      res.status(404).send({ message: "products not found" });
+      res.status(404).send({
+        success: false,
+        message: "product not found",
+      });
     }
   } catch (error) {
     res.status(500).send({ message: error.message });
