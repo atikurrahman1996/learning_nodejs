@@ -12,7 +12,9 @@ app.use(express.json());
 const connectDB = async () => {
   try {
     await mongoose.connect("mongodb://127.0.0.1:27017/usersTestDB"); //Data Stored in local machine in mongodb compass
+
     //"mongodb+srv://atikurrahman:Atik123456@cluster0.18ow1rv.mongodb.net/usersTestDB"  // if we use this data will  store in mongodb atlas cloud
+
     console.log("db is connected");
   } catch (error) {
     console.log("db is not connected");

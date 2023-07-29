@@ -15,7 +15,6 @@ userRoute.post(
   runValidation,
   registerUser
 );
-
 userRoute.post("/login", userLoginValidator, runValidation, loginUser);
 
 module.exports = userRoute;

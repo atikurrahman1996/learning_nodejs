@@ -7,7 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 //app.use(userRouter);
+
 app.use("/api/users", userRouter);
 
 app.get("/", (req, res) => {

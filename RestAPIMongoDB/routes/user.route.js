@@ -13,6 +13,5 @@ router.get("/:id", getOneUsers);
 router.post("/", createUsers);
 //router.put("/", updateUsers);
 router.patch("/:id", updateUsers); //put & patch both are used for update
-router.delete("/:id", deleteUsers); //put & patch both are used for update
-
+router.delete("/:id", deleteUsers);
 module.exports = router;
