@@ -60,6 +60,8 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to the server");
 });
 
+//Create
+
 app.post("/products", async (req, res) => {
   try {
     const newProduct = new productModel({
@@ -75,6 +77,8 @@ app.post("/products", async (req, res) => {
     res.status(500).send({ message: error.message });
   }
 });
+
+//Read
 
 app.get("/products", async (req, res) => {
   try {
@@ -128,7 +132,7 @@ app.get("/products/:id", async (req, res) => {
 app.delete("/products/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const product = await productModel.deleteOne({ _id: id }); //if we want to see which product deleted used -finfByIdAndDelete
+    const product = await productModel.deleteOne({ _id: id }); //if we want to see which product deleted used -findByIdAndDelete
     if (product) {
       res.status(200).send({
         success: true,
@@ -162,7 +166,7 @@ app.put("/products/:id", async (req, res) => {
     ); */
 
     const updatedProduct = await productModel.findByIdAndUpdate(
-      //if we want to see which product deleted used -finfByIdAndUpdate
+      //if we want to see which product deleted used -findByIdAndUpdate
       //Dynamic  value
 
       { _id: id },

@@ -89,7 +89,7 @@ app.get("/products", async (req, res) => {
           $and: [{ price: { $gt: price } }, { rating: { $gt: rating } }],
         })
         //.countDocuments(); //count documents
-        .sort({ price: 1 }) //Asscending order 1 to big number, descending order -1 small
+        .sort({ price: 1 }) //Asscending order 1 to big number, descending order -1 big to small
         .select({ title: 1 }); //Selecting title only
     } else {
       products = await productModel

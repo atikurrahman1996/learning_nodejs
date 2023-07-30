@@ -122,13 +122,13 @@ app.get("/products/:id", async (req, res) => {
 app.get("/products", async (req, res) => {
   try {
     const price = req.query.price; //if users search for random price
-    const rating = req.query.rating; //if users search for random price
+    const rating = req.query.rating; //if users search for random rating
     let products;
     if (price && rating) {
       products = await productModel.find({
-        //$or: [{ price: { $gt: 5000 } }, { rating: { $gt: 4 } }],
+        //$or: [{ price: { $gt: 5000 } }, { rating: { $gt: 4 } }],   //static value
         //$and: [{ price: { $gt: 500 } }, { rating: { $gt: 4 } }],
-        $and: [{ price: { $gt: price } }, { rating: { $gt: rating } }],
+        $and: [{ price: { $gt: price } }, { rating: { $gt: rating } }], //dynamic value
       });
     } else {
       products = await productModel.find();

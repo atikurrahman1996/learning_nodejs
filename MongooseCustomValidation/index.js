@@ -30,9 +30,9 @@ const productsSchema = new mongoose.Schema({
     required: [true, "product title is rquired"],
     minLength: [4, "minimum length of the product title 4 is rquired"],
     maxLength: [50, "maximum length of the product title  50 is rquired"],
-    trim: true, // remove white space
-    //enum: ["iphone14", "samsung", "vivo", "xiomi"],  // we have to search in betwwen enum mobiles set
+    trim: true, // remove white space //enum: ["iphone14", "samsung", "vivo", "xiomi"],  // we have to search in betwwen enum mobiles set
   },
+
   price: {
     type: Number,
     min: [100, "minimum price of the product is hundred tk  "],
@@ -47,6 +47,21 @@ const productsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  // custom validator
+
+  phone: {
+    type: String,
+    required: [true, "phone number is required"],
+
+    validate: {
+      validator: function (v) {
+        return /\d{3}-\d{3}-\d{4}/.test(v);
+      },
+      message: (props) => `${props.value} is not a valid phone number!`,
+    },
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
@@ -75,6 +90,7 @@ app.post("/products", async (req, res) => {
       price: req.body.price,
       rating: req.body.rating,
       description: req.body.description,
+      phone: req.body.phone,
     });
     const productData = await newProduct.save();
 
