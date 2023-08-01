@@ -1,4 +1,4 @@
-//databse hashing + salting password
+//databse hashing + salting password   (more secure)
 
 require("dotenv").config();
 const express = require("express");
@@ -63,7 +63,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//route not found error
+//handling client error
 
 app.use((req, res, next) => {
   res.status(404).json({

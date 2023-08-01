@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// this is for encryption authentication
+// this is for encryption authentication, (go to mongoose encryption documentation)
 
 /*
 const encKey = process.env.ENC_KEY;

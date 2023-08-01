@@ -16,6 +16,8 @@ passport.use(
       try {
         const user = await User.findOne({ googleId: profile.id });
 
+        //if user not found, create new user
+
         if (!user) {
           let newUser = new User({
             googleId: profile.id,
@@ -24,6 +26,8 @@ passport.use(
           await newUser.save();
           return cb(null, newUser);
         } else {
+          //if user found, return user
+
           return cb(null, user);
         }
       } catch (error) {

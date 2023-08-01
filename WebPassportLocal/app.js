@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.set("trust proxy", 1); // trust first proxy
+app.set("trust proxy", 1); // code copied from express-sessions   (trust first proxy)
 app.use(
   session({
     secret: "keyboard cat",
@@ -59,14 +59,14 @@ app.post("/register", async (req, res) => {
         password: hash,
       });
       await newUser.save();
-      res.status(201).redirect("/login");
+      res.redirect("/login");
     });
   } catch (error) {
     res.status(500).send(error.message);
   }
 });
 
-//login get
+//login get, checked is user loggedIn or not
 
 const checkLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) {
