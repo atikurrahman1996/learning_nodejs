@@ -53,4 +53,10 @@ app.use((req, res) => {
   res.send("404 ! not a valid url");
 });
 
+/*//if users go to an of the the wrong url show this message
+app.all("*", (req, res) => {
+
+  res.status(404).send('resource not found!')
+})
+*/
 module.exports = app;
