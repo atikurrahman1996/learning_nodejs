@@ -6,6 +6,7 @@ const userRegister = (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
+      dob: req.body.dob,
     };
 
     return res.status(201).json({ message: "User was created", user });
