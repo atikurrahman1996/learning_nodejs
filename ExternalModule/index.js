@@ -1,4 +1,4 @@
-//Externl Module, first initialized npm, go to terminal write > npm init then install > package
+//External Module, first initialized npm, go to terminal write > npm init then install > package
 
 //use fruits-names package
 /*

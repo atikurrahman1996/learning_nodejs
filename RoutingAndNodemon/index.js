@@ -62,6 +62,8 @@ const fs = require("fs");
 const PORT = 3000;
 const hostName = "127.0.0.1";
 
+//using status code and filename because all the status code are not same, we will received different status code and filename
+
 const server = http.createServer((req, res) => {
   const handleReadFile = (statusCode, fileLocation) => {
     fs.readFile(fileLocation, (err, data) => {
@@ -78,7 +80,7 @@ const server = http.createServer((req, res) => {
     handleReadFile(200, "./views/contact.html");
   } else {
     fs.readFile("error.html", (err, data) => {
-      handleReadFile(200, "./views/error.html");
+      handleReadFile(404, "./views/error.html");
     });
   }
 });
