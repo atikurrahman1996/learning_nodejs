@@ -6,7 +6,7 @@ fs.writeFile("demo1.txt", "this is example text", (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("successfull");
+    console.log("successful");
   }
 });
 
@@ -18,7 +18,7 @@ fs.writeFile("demo1.txt", "My name is Atik", (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("successfull");
+    console.log("successful");
   }
 });
 
@@ -30,7 +30,7 @@ fs.appendFile("demo1.txt", "I am 26 years old", (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("successfull");
+    console.log("successful");
   }
 });
 
