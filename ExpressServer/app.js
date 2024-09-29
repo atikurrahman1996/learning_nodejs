@@ -5,9 +5,9 @@ const userRouter = require("./routes/users.route");
 
 app.use("/api/users", userRouter);
 
-// get request used to read or retrive the data
+// get request used to read or retrieve the data
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("I am a get request at home route");
   res.end();
 });

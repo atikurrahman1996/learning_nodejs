@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   res.send("404 not found");
 });
 
-//Middleware Error handling, alwasys take four arguments
+//Middleware Error handling, always take four arguments
 
 app.use((err, req, res, next) => {
   res.status(500).send("Something broke!");

@@ -53,6 +53,10 @@ app.post("/user", (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("I am a home route");
+});
+
 app.get("/register", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
