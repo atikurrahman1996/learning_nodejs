@@ -11,5 +11,6 @@ ExpressServer
 HttpRequestWithParameter
 HttpResHtmlJson
 EnvVariables
+AreaCalculator
 
 */

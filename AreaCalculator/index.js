@@ -12,8 +12,8 @@ app.get("/", (req, res) => {
 app.get("/circle", (req, res) => {
   res.sendFile(__dirname + "/circle.html");
 });
-app.get("/tringle", (req, res) => {
-  res.sendFile(__dirname + "/tringle.html");
+app.get("/triangle", (req, res) => {
+  res.sendFile(__dirname + "/triangle.html");
 });
 
 app.post("/circle", (req, res) => {
@@ -22,11 +22,11 @@ app.post("/circle", (req, res) => {
   res.send(`Area of Circle is: ${area}`);
 });
 
-app.post("/tringle", (req, res) => {
+app.post("/triangle", (req, res) => {
   const height = req.body.height;
   const base = req.body.base;
   const area = 0.5 * base * height;
-  res.send(`Area of Tringle is: ${area}`);
+  res.send(`Area of Triangle is: ${area}`);
 });
 
 app.listen(port, () => {
