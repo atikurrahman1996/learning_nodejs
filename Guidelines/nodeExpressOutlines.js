@@ -12,5 +12,8 @@ HttpRequestWithParameter
 HttpResHtmlJson
 EnvVariables
 AreaCalculator
+Middleware
+MiddlewareStatic
+ChalkMiddleware
 
 */
